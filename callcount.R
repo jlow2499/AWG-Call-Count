@@ -3,7 +3,7 @@ library(stringr)
 library(tidyr)
 
 CODE <- read.csv("//knx1fs01/ED Reporting/Lowhorn Big Data/Golden Rule Data/CODE.csv")
-#########DILLON HIGHTOWER ADD############
+
 a <- read.csv("//knx1fs01/ED Reporting/Lowhorn Big Data/Golden Rule Data/a.txt", stringsAsFactors=FALSE)
 b <- read.csv("//knx1fs01/ED Reporting/Lowhorn Big Data/Golden Rule Data/b.txt", stringsAsFactors=FALSE)
 c <- read.csv("//knx1fs01/ED Reporting/Lowhorn Big Data/Golden Rule Data/c.txt", stringsAsFactors=FALSE)
@@ -21,13 +21,9 @@ n <- read.csv("//KNX1FS01/ED Reporting/Lowhorn Big Data/Golden Rule Data/n.csv",
 o <- read.csv("//KNX1FS01/ED Reporting/Lowhorn Big Data/Golden Rule Data/o.csv",header=TRUE,stringsAsFactors = FALSE)
 
 knoxtalx <- read.csv("C:/Users/193344/Desktop/AWG Transactions/knoxtalx.csv", stringsAsFactors=FALSE)
-#########################################
 
-#########DILLON HIGHTOWER ADD############
 df <- rbind(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o)
 rm(a); rm(b); rm(c); rm(d); rm(e); rm(f); rm(g); rm(h); rm(i); rm(j); rm(k); rm(l); rm(m); rm(n); rm(o)
-#########################################
-#######################################################################################################
 
 DATE <- knoxtalx$Date
 DATE <- as.data.frame(DATE)
@@ -41,7 +37,6 @@ df$TFILE <- as.character(df$TFILE)
 df <- df[df$TFILE %in% accounts,]
 
 data <- df[!duplicated(df$TFILE),]
-
 
 contacts <- c("CM","A3P","AT")
 codes <- c("1C","1H","1P","215H","215W","225H","2H","2P","365W","370W","375W","380W","385W","390W","395W","400W","405W")
